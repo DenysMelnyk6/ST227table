@@ -410,14 +410,26 @@ the first state of the Markov’s chain</td>
 <td>Greatest Common divisor of all loops leading from state <span class="math inline">\(i\)</span> to <span class="math inline">\(i\)</span></td>
 </tr>
 <tr class="even">
+<td><span class="math inline">\(H_j\)</span></td>
+<td>First hitting time</td>
+<td>Number of steps until state <span class="math inline">\(j\)</span>
+is hit</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(H_A\)</span></td>
+<td>First hitting time</td>
+<td>Number of steps until set <span class="math inline">\(A\)</span> is
+hit</td>
+</tr>
+<tr class="even">
 <td><span class="math inline">\(h_{ij}\)</span></td>
-<td>Hitting time</td>
+<td>Hitting probability</td>
 <td>Probability of reaching state <span class="math inline">\(j\)</span>
 from state <span class="math inline">\(i\)</span>.</td>
 </tr>
 <tr class="odd">
 <td><span class="math inline">\(h_{iA}\)</span></td>
-<td>Hitting time</td>
+<td>Hitting probability</td>
 <td>Probability of entering a set <span class="math inline">\(A\)</span>
 from state <span class="math inline">\(i\)</span>.</td>
 </tr>
@@ -446,6 +458,46 @@ loops on itself</td>
 <td><span class="math inline">\(m_i\)</span></td>
 <td>Expected return time</td>
 <td>Expected number of steps until state <span class="math inline">\(i\)</span> loops on itself, basically <span class="math inline">\(\eta_{ii}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(V_j\)</span></td>
+<td>Number of visits</td>
+<td>Number of visits to state <span class="math inline">\(j\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(V_A\)</span></td>
+<td>Number of visits</td>
+<td>Number of visits to set of states <span class="math inline">\(A\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\mathcal{T}\)</span></td>
+<td>Set of Transient States</td>
+<td>Subset of <span class="math inline">\(S\)</span>, containing all
+transient states</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mu\)</span></td>
+<td>Invariant Measure</td>
+<td>???</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\pi\)</span></td>
+<td>Invariant Distribution</td>
+<td>A distribution describing long term(limit) behaviour of the chain,
+has a property of <span class="math inline">\(\pi=\pi P^n\)</span>. Not
+every chain has <span class="math inline">\(\pi\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\gamma_i^k\)</span></td>
+<td>Expected number of visits</td>
+<td>Expected number of visits to state <span class="math inline">\(i\)</span> before chain returns to state <span class="math inline">\(k\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\Pi\)</span></td>
+<td>Long Term Transition Matrix</td>
+<td><span class="math inline">\(\Pi = \lim_{{n \to \infty}}
+P^n\)</span>, with all rows equal to <span class="math inline">\(\pi\)</span>. Describes the behaviour of the chain
+after arbitrarily many steps. Not applicable to every Markov Chain</td>
 </tr>
 </tbody>
 </table>
