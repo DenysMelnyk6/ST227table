@@ -1,0 +1,29 @@
+---
+title: "ST227 Table"
+author: "Denys Melnyk"
+date: "`r Sys.Date()`"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+| Symbol | Name           | Description                                         |
+|--------|----------------|-----------------------------------------------------|
+| $S$ | State Space | Possible values taken by the Markov chain |
+| $P$ | Transition matrix  | A matrix containing the probabilities of going between state spaces, rows being "old" and columns being "new" spaces, all 1-step |
+| $P_{ij}$ | Transition probability | A probability of Markov Chain going from state $i$ to state $j$ in 1-step|
+| $P_{ij}^n$ | Transition probability | A probability of Markov Chain going from state $i$ to state $j$ in n-steps|
+| $\lambda$ | Initial distribution | A vector containing distribution of the first state of the chain |
+| $\lambda_i$ | Initial probability of state $i$ | A probability of state $i$ being the first state of the Markov's chain |
+| $d_i$ | State Period | Greatest Common divisor of all loops leading from state $i$ to $i$ |
+| $h_{ij}$ | Hitting time | Probability of reaching state $j$ from state $i$. |
+| $h_{iA}$ | Hitting time | Probability of entering a set $A$ from state $i$. |
+| $\eta_{ij}$ | Expected hitting time | Expected number of steps until state $j$ is reached from state $i$ |
+| $\eta_{iA}$ | Expected hitting time | Expected number of steps until set $A$ is reached from state $i$ |
+| $T_i$ | First Return time | Number of steps until state $i$ loops on itself |
+| $f_i$ | Return probability | probability of chain returning back to state $i$ from $i$, basically $h_{ii}$ |
+| $m_i$ | Expected return time | Expected number of steps until state $i$ loops on itself, basically $\eta_{ii}$ | 
