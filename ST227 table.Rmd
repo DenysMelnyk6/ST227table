@@ -3,8 +3,8 @@ title: "ST227 Table"
 author: "Denys Melnyk"
 date: "`r Sys.Date()`"
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -32,7 +32,7 @@ knitr::opts_chunk$set(echo = TRUE)
 | $V_j$ | Number of visits | Number of visits to state $j$ |
 | $V_A$ | Number of visits | Number of visits to set of states $A$ |
 | $\mathcal{T}$| Set of Transient States | Subset of $S$, containing all transient states |
-| $\mu$ | Invariant Measure | ??? |
-| $\pi$ | Invariant Distribution | A distribution describing long term(limit) behaviour of the chain, has a property of $\pi=\pi P^n$. Not every chain has $\pi$ |
+| $\mu$ | Invariant Measure | A vector describing the measure, or "weight" of each state at every step of the chain. Has a property of $\mu=\mu P^n$ |
+| $\pi$ | Invariant Distribution | A special case of invariant measure, distribution describing the distribution of the chain at every step of the chain, has a property of $\pi=\pi P^n$ and $\sum_{i\in S}\pi_i=1$. Not every chain has $\pi$. |
 | $\gamma_i^k$ | Expected number of visits | Expected number of visits to state $i$ before chain returns to state $k$|
 | $\Pi$ | Long Term Transition Matrix | $\Pi = \lim_{{n \to \infty}} P^n$, with all rows equal to $\pi$. Describes the behaviour of the chain after arbitrarily many steps. Not applicable to every Markov Chain |
