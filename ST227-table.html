@@ -11,7 +11,7 @@
 
 <meta name="author" content="Denys Melnyk" />
 
-<meta name="date" content="2024-02-22" />
+<meta name="date" content="2024-02-27" />
 
 <title>ST227 Table</title>
 
@@ -352,7 +352,7 @@ display: none;
 
 <h1 class="title toc-ignore">ST227 Table</h1>
 <h4 class="author">Denys Melnyk</h4>
-<h4 class="date">2024-02-22</h4>
+<h4 class="date">2024-02-27</h4>
 
 </div>
 
@@ -402,7 +402,7 @@ chain</td>
 <td><span class="math inline">\(\lambda_i\)</span></td>
 <td>Initial probability of state <span class="math inline">\(i\)</span></td>
 <td>A probability of state <span class="math inline">\(i\)</span> being
-the first state of the Markov’s chain</td>
+the first state of the Markov’s chain, <span class="math inline">\(i\)</span>’th entry of <span class="math inline">\(\lambda\)</span></td>
 </tr>
 <tr class="odd">
 <td><span class="math inline">\(d_i\)</span></td>
@@ -411,36 +411,36 @@ the first state of the Markov’s chain</td>
 </tr>
 <tr class="even">
 <td><span class="math inline">\(H_j\)</span></td>
-<td>First hitting time</td>
+<td>State first hitting time</td>
 <td>Number of steps until state <span class="math inline">\(j\)</span>
-is hit</td>
+is hit. Is 0 if the start point is state <span class="math inline">\(j\)</span></td>
 </tr>
 <tr class="odd">
 <td><span class="math inline">\(H_A\)</span></td>
-<td>First hitting time</td>
+<td>Set first hitting time</td>
 <td>Number of steps until set <span class="math inline">\(A\)</span> is
-hit</td>
+hit. Is 0 if the start point is a state in set <span class="math inline">\(A\)</span></td>
 </tr>
 <tr class="even">
 <td><span class="math inline">\(h_{ij}\)</span></td>
-<td>Hitting probability</td>
+<td>State hitting probability</td>
 <td>Probability of reaching state <span class="math inline">\(j\)</span>
 from state <span class="math inline">\(i\)</span>.</td>
 </tr>
 <tr class="odd">
 <td><span class="math inline">\(h_{iA}\)</span></td>
-<td>Hitting probability</td>
+<td>Set hitting probability</td>
 <td>Probability of entering a set <span class="math inline">\(A\)</span>
 from state <span class="math inline">\(i\)</span>.</td>
 </tr>
 <tr class="even">
 <td><span class="math inline">\(\eta_{ij}\)</span></td>
-<td>Expected hitting time</td>
+<td>State expected hitting time</td>
 <td>Expected number of steps until state <span class="math inline">\(j\)</span> is reached from state <span class="math inline">\(i\)</span></td>
 </tr>
 <tr class="odd">
 <td><span class="math inline">\(\eta_{iA}\)</span></td>
-<td>Expected hitting time</td>
+<td>Set expected hitting time</td>
 <td>Expected number of steps until set <span class="math inline">\(A\)</span> is reached from state <span class="math inline">\(i\)</span></td>
 </tr>
 <tr class="even">
@@ -478,9 +478,8 @@ transient states</td>
 <tr class="even">
 <td><span class="math inline">\(\mu\)</span></td>
 <td>Invariant Measure</td>
-<td>A vector describing the measure, or “weight” of each state at every
-step of the chain. Has a property of <span class="math inline">\(\mu=\mu
-P^n\)</span></td>
+<td>A vector of positive entries, describing the measure, or “weight” of
+each state at every step of the chain. Has a property of <span class="math inline">\(\mu=\mu P^n\)</span></td>
 </tr>
 <tr class="odd">
 <td><span class="math inline">\(\pi\)</span></td>

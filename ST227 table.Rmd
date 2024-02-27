@@ -3,8 +3,8 @@ title: "ST227 Table"
 author: "Denys Melnyk"
 date: "`r Sys.Date()`"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -18,21 +18,21 @@ knitr::opts_chunk$set(echo = TRUE)
 | $P_{ij}$ | Transition probability | A probability of Markov Chain going from state $i$ to state $j$ in 1-step|
 | $P_{ij}^n$ | Transition probability | A probability of Markov Chain going from state $i$ to state $j$ in n-steps|
 | $\lambda$ | Initial distribution | A vector containing distribution of the first state of the chain |
-| $\lambda_i$ | Initial probability of state $i$ | A probability of state $i$ being the first state of the Markov's chain |
+| $\lambda_i$ | Initial probability of state $i$ | A probability of state $i$ being the first state of the Markov's chain, $i$'th entry of $\lambda$ |
 | $d_i$ | State Period | Greatest Common divisor of all loops leading from state $i$ to $i$ |
-| $H_j$ | First hitting time | Number of steps until state $j$ is hit |
-| $H_A$ | First hitting time | Number of steps until set $A$ is hit |
-| $h_{ij}$ | Hitting probability | Probability of reaching state $j$ from state $i$. |
-| $h_{iA}$ | Hitting probability | Probability of entering a set $A$ from state $i$. |
-| $\eta_{ij}$ | Expected hitting time | Expected number of steps until state $j$ is reached from state $i$ |
-| $\eta_{iA}$ | Expected hitting time | Expected number of steps until set $A$ is reached from state $i$ |
+| $H_j$ | State first hitting time | Number of steps until state $j$ is hit. Is 0 if the start point is state $j$ |
+| $H_A$ | Set first hitting time | Number of steps until set $A$ is hit. Is 0 if the start point is a state in set $A$ |
+| $h_{ij}$ | State hitting probability | Probability of reaching state $j$ from state $i$. |
+| $h_{iA}$ | Set hitting probability | Probability of entering a set $A$ from state $i$. |
+| $\eta_{ij}$ | State expected hitting time | Expected number of steps until state $j$ is reached from state $i$ |
+| $\eta_{iA}$ | Set expected hitting time | Expected number of steps until set $A$ is reached from state $i$ |
 | $T_i$ | First Return time | Number of steps until state $i$ loops on itself |
 | $f_i$ | Return probability | probability of chain returning back to state $i$ from $i$, basically $h_{ii}$ |
 | $m_i$ | Expected return time | Expected number of steps until state $i$ loops on itself, basically $\eta_{ii}$ | 
 | $V_j$ | Number of visits | Number of visits to state $j$ |
 | $V_A$ | Number of visits | Number of visits to set of states $A$ |
 | $\mathcal{T}$| Set of Transient States | Subset of $S$, containing all transient states |
-| $\mu$ | Invariant Measure | A vector describing the measure, or "weight" of each state at every step of the chain. Has a property of $\mu=\mu P^n$ |
+| $\mu$ | Invariant Measure | A vector of positive entries, describing the measure, or "weight" of each state at every step of the chain. Has a property of $\mu=\mu P^n$ |
 | $\pi$ | Invariant Distribution | A special case of invariant measure, distribution describing the distribution of the chain at every step of the chain, has a property of $\pi=\pi P^n$ and $\sum_{i\in S}\pi_i=1$. Not every chain has $\pi$. |
 | $\gamma_i^k$ | Expected number of visits | Expected number of visits to state $i$ before chain returns to state $k$|
 | $\Pi$ | Long Term Transition Matrix | $\Pi = \lim_{{n \to \infty}} P^n$, with all rows equal to $\pi$. Describes the behaviour of the chain after arbitrarily many steps. Not applicable to every Markov Chain |
