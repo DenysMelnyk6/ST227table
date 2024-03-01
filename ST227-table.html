@@ -11,7 +11,7 @@
 
 <meta name="author" content="Denys Melnyk" />
 
-<meta name="date" content="2024-02-27" />
+<meta name="date" content="2024-03-01" />
 
 <title>ST227 Table</title>
 
@@ -352,11 +352,16 @@ display: none;
 
 <h1 class="title toc-ignore">ST227 Table</h1>
 <h4 class="author">Denys Melnyk</h4>
-<h4 class="date">2024-02-27</h4>
+<h4 class="date">2024-03-01</h4>
 
 </div>
 
 
+<p><strong>Disclaimer</strong>: The descriptions provided below are
+<em>NOT</em> rigorous definitions and should <em>NOT</em> be used for
+revising theory. They serve a purpose of a small cheat sheet that could
+be used during assignments, lectures, tutorials or practicing applied
+questions for exam.</p>
 <table>
 <colgroup>
 <col width="10%" />
@@ -500,6 +505,39 @@ distribution of the chain at every step of the chain, has a property of
 <td><span class="math inline">\(\Pi = \lim_{{n \to \infty}}
 P^n\)</span>, with all rows equal to <span class="math inline">\(\pi\)</span>. Describes the behaviour of the chain
 after arbitrarily many steps. Not applicable to every Markov Chain</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(G=(V, E)\)</span></td>
+<td>Graph</td>
+<td>Graph <span class="math inline">\(G\)</span>, where <span class="math inline">\(V\)</span> is a set of vertices and <span class="math inline">\(E\subset S \times S\)</span>, set of all edges.
+All graphs in this module are connected and weighted</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(V\)</span></td>
+<td>Set of all vertices</td>
+<td>Set of all vertices in a graph. In this module, <span class="math inline">\(V=S\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(E\)</span></td>
+<td>Set of all edges</td>
+<td>Set containing all connections in a graph, is a subset of <span class="math inline">\(S\times S\)</span>. As all the graphs are
+connected, for any 2 points <span class="math inline">\(x,y \in
+V\)</span> there exists a subset of <span class="math inline">\(E\)</span> connecting them</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(w(x,y)\)</span></td>
+<td>Weight between vertices <span class="math inline">\(x\)</span> and
+<span class="math inline">\(y\)</span></td>
+<td>A non-negative real number, describing the weight of an edge. <span class="math inline">\(w(x,y)=0\)</span> if <span class="math inline">\(x,y\notin E\)</span>, and <span class="math inline">\(w(x,y)&gt;0\)</span> otherwise.</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(W(x)\)</span></td>
+<td>Sum of weights of edges connected to vertex <span class="math inline">\(x\)</span></td>
+<td>Positive(due to connected graph assumption) number, describing the
+sum of all edges connecting <span class="math inline">\(x\)</span> with
+the rest of the graph: <span class="math inline">\(W(x)=\sum_{y \in
+V}w(x,y)&lt;\infty\)</span> <span class="math inline">\(\forall x \in
+V\)</span></td>
 </tr>
 </tbody>
 </table>

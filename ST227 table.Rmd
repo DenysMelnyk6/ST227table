@@ -11,6 +11,9 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+**Disclaimer**: The descriptions provided below are *NOT* rigorous definitions and should *NOT* be used for revising theory. They serve a purpose of a small cheat sheet that could be used during assignments, lectures, tutorials or practicing applied questions for exam. 
+
+
 | Symbol | Name           | Description                                         |
 |--------|----------------|-----------------------------------------------------|
 | $S$ | State Space | Possible values taken by the Markov chain |
@@ -36,3 +39,9 @@ knitr::opts_chunk$set(echo = TRUE)
 | $\pi$ | Invariant Distribution | A special case of invariant measure, distribution describing the distribution of the chain at every step of the chain, has a property of $\pi=\pi P^n$ and $\sum_{i\in S}\pi_i=1$. Not every chain has $\pi$. |
 | $\gamma_i^k$ | Expected number of visits | Expected number of visits to state $i$ before chain returns to state $k$|
 | $\Pi$ | Long Term Transition Matrix | $\Pi = \lim_{{n \to \infty}} P^n$, with all rows equal to $\pi$. Describes the behaviour of the chain after arbitrarily many steps. Not applicable to every Markov Chain |
+| $G=(V, E)$ | Graph | Graph $G$, where $V$ is a set of vertices and $E\subset S \times S$, set of all edges. All graphs in this module are connected and weighted |
+| $V$ | Set of all vertices | Set of all vertices in a graph. In this module, $V=S$ |
+| $E$ | Set of all edges | Set containing all connections in a graph, is a subset of $S\times S$. As all the graphs are connected, for any 2 points $x,y \in V$ there exists a subset of $E$ connecting them |
+| $w(x,y)$ | Weight between vertices $x$ and $y$ | A non-negative real number, describing the weight of an edge. $w(x,y)=0$ if $x,y\notin E$, and $w(x,y)>0$ otherwise. |
+| $W(x)$ | Sum of weights of edges connected to vertex $x$ | Positive(due to connected graph assumption) number, describing the sum of all edges connecting $x$ with the rest of the graph: $W(x)=\sum_{y \in V}w(x,y)<\infty$ $\forall x \in V$|
+
