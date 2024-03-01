@@ -11,7 +11,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-**Disclaimer**: The descriptions provided below are *NOT* rigorous definitions and should *NOT* be used for revising theory. They serve a purpose of a small cheat sheet that could be used during assignments, lectures, tutorials or practicing applied questions for exam. 
+**Disclaimer**: The descriptions provided below are *NOT* rigorous definitions and should *NOT* be used for revising theory. They serve a purpose of a small cheat sheet with intuitive explanations behind the notions in the module, that could be used during assignments, lectures, tutorials or practicing applied questions for exam. 
 
 
 | Symbol | Name           | Description                                         |
