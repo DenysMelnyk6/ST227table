@@ -11,7 +11,7 @@
 
 <meta name="author" content="Denys Melnyk" />
 
-<meta name="date" content="2024-03-01" />
+<meta name="date" content="2024-03-07" />
 
 <title>ST227 Table</title>
 
@@ -352,7 +352,7 @@ display: none;
 
 <h1 class="title toc-ignore">ST227 Table</h1>
 <h4 class="author">Denys Melnyk</h4>
-<h4 class="date">2024-03-01</h4>
+<h4 class="date">2024-03-07</h4>
 
 </div>
 
@@ -363,6 +363,8 @@ revising theory. They serve a purpose of a small cheat sheet with
 intuitive explanations behind the notions in the module, that could be
 used during assignments, lectures, tutorials or practicing applied
 questions for exam.</p>
+<div id="notation" class="section level1">
+<h1>Notation</h1>
 <table>
 <colgroup>
 <col width="10%" />
@@ -493,7 +495,8 @@ each state at every step of the chain. Has a property of <span class="math inlin
 <td>A special case of invariant measure, distribution describing the
 distribution of the chain at every step of the chain, has a property of
 <span class="math inline">\(\pi=\pi P^n\)</span> and <span class="math inline">\(\sum_{i\in S}\pi_i=1\)</span>. Not every chain has
-<span class="math inline">\(\pi\)</span>.</td>
+<span class="math inline">\(\pi\)</span>. Time-reversed chains have the
+same stationary distributions.</td>
 </tr>
 <tr class="even">
 <td><span class="math inline">\(\gamma_i^k\)</span></td>
@@ -505,7 +508,7 @@ distribution of the chain at every step of the chain, has a property of
 <td>Long Term Transition Matrix</td>
 <td><span class="math inline">\(\Pi = \lim_{{n \to \infty}}
 P^n\)</span>, with all rows equal to <span class="math inline">\(\pi\)</span>. Describes the behaviour of the chain
-after arbitrarily many steps. Not applicable to every Markov Chain</td>
+after arbitrarily many steps. Not applicable to every Markov Chain.</td>
 </tr>
 <tr class="even">
 <td><span class="math inline">\(G=(V, E)\)</span></td>
@@ -540,8 +543,74 @@ the rest of the graph: <span class="math inline">\(W(x)=\sum_{y \in
 V}w(x,y)&lt;\infty\)</span> <span class="math inline">\(\forall x \in
 V\)</span></td>
 </tr>
+<tr class="odd">
+<td><span class="math inline">\(Y\)</span></td>
+<td>Offspring Distribution</td>
+<td>Distribution describing the number of children in the branching
+process. <span class="math inline">\(X_n\)</span>, number of offspring
+at time <span class="math inline">\(n\)</span>, is described as <span class="math inline">\(X_n=\sum_{k=1}^{X_{n-1}} Y_k\)</span>, where <span class="math inline">\(Y_i\)</span>, <span class="math inline">\(\forall
+i \in \mathbb{N}\)</span> are independent copies of Y.</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(G(s)\)</span></td>
+<td>Probability generating function(of <span class="math inline">\(Y\)</span>)</td>
+<td>Notion similar to moment generating function. Calculated by <span class="math inline">\(G(s)=\mathbb{E}[s^Y], \quad
+|s|&lt;1\)</span>.</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(F_n(s)\)</span></td>
+<td>Probability generating function(of <span class="math inline">\(X_n\)</span>)</td>
+<td>Notion similar to moment generating function. Calculated by <span class="math inline">\(F_n(s)=\mathbb{E}[s^{X_n}|X_0=1], \quad |s|&lt;1,
+\quad n \in \mathbb{N} \cup \{0\}\)</span>.</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\alpha\)</span></td>
+<td>Extinction Probability</td>
+<td>Probability that the branching process ends up with no offspring.
+Defined as <span class="math inline">\(\alpha=\mathbb{P}(H_0&lt;\infty|X_0=1)\)</span>.
+Can be interpreted as <span class="math inline">\(h_{1,0}\)</span>.
+Smallest solution for equation <span class="math inline">\(G(s)=s\)</span> on the interval <span class="math inline">\([0,1]\)</span>.</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\alpha_n\)</span></td>
+<td>Extinction Probability at time <span class="math inline">\(n\)</span></td>
+<td>Probability that the branching process is extinct at time <span class="math inline">\(n\)</span>. Follows a property <span class="math inline">\(\alpha_{n}\geq \alpha_{n+1}\)</span>. The sequence
+<span class="math inline">\((\alpha_n)_{n\geq 0}\)</span> converges to
+<span class="math inline">\(\alpha\)</span>.</td>
+</tr>
 </tbody>
 </table>
+</div>
+<div id="probability-generation-function-properties" class="section level1">
+<h1>Probability generation function properties</h1>
+<p>Assuming the notation from the table above:</p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(G(s)=\sum_{k=0}^{\infty}s^k
+\mathbb{P}(Y=k)\)</span> from definition of expectation.</p></li>
+<li><p><span class="math inline">\(G(0)=\mathbb{P}(Y=k)\)</span> from 1
+by <span class="math inline">\(s=0\)</span>.</p></li>
+<li><p><span class="math inline">\(G(1)=\mathbb{P}(Y&lt;\infty)=1\)</span> from
+convergence of expectation.</p></li>
+<li><p><span class="math inline">\(G^{(1)}(1)=\mathbb{E}[Y]\)</span>
+from differentiation of the Power Series.</p></li>
+<li><p><span class="math inline">\(F_n(s)=\sum_{k=0}^{\infty}s^k
+\mathbb{P}(X_n=k | X_0=1)\)</span> from definition of
+expectation.</p></li>
+<li><p><span class="math inline">\(F_0(s)=s, \quad s \in [0,1]\)</span>
+following from 5 by subbing in <span class="math inline">\(n=0\)</span>.</p></li>
+<li><p><span class="math inline">\(F_1(s)=\mathbb{E}[s^{X_1}|
+X_0=1]=\mathbb{E}[s^{Y}| X_0=1]=G(s),\quad s \in [0,1]\)</span> from
+definiton of <span class="math inline">\(Y\)</span>.</p></li>
+<li><p><span class="math inline">\(F_n(0)=\mathbb{P}(X_n=0 | X_0=1),
+\quad n \in \mathbb{N} \cup \{0\}\)</span> from 5 by subbing in <span class="math inline">\(s=0\)</span>.</p></li>
+<li><p><span class="math inline">\(F_n^{(1)}(1)=\mathbb{E}[X_n| X_0=1],
+\quad n \in \mathbb{N} \cup \{0\}\)</span> from differentiation of the
+Power Series.</p></li>
+<li><p>Proposition 6.1.1, will be added later.</p></li>
+<li></li>
+<li></li>
+</ol>
+</div>
 
 
 

@@ -13,6 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 **Disclaimer**: The descriptions provided below are *NOT* rigorous definitions and should *NOT* be used for revising theory. They serve a purpose of a small cheat sheet with intuitive explanations behind the notions in the module, that could be used during assignments, lectures, tutorials or practicing applied questions for exam. 
 
+# Notation
 
 | Symbol | Name           | Description                                         |
 |--------|----------------|-----------------------------------------------------|
@@ -36,12 +37,35 @@ knitr::opts_chunk$set(echo = TRUE)
 | $V_A$ | Number of visits | Number of visits to set of states $A$ |
 | $\mathcal{T}$| Set of Transient States | Subset of $S$, containing all transient states |
 | $\mu$ | Invariant Measure | A vector of positive entries, describing the measure, or "weight" of each state at every step of the chain. Has a property of $\mu=\mu P^n$ |
-| $\pi$ | Invariant Distribution | A special case of invariant measure, distribution describing the distribution of the chain at every step of the chain, has a property of $\pi=\pi P^n$ and $\sum_{i\in S}\pi_i=1$. Not every chain has $\pi$. |
+| $\pi$ | Invariant Distribution | A special case of invariant measure, distribution describing the distribution of the chain at every step of the chain, has a property of $\pi=\pi P^n$ and $\sum_{i\in S}\pi_i=1$. Not every chain has $\pi$. Time-reversed chains have the same stationary distributions.|
 | $\gamma_i^k$ | Expected number of visits | Expected number of visits to state $i$ before chain returns to state $k$|
-| $\Pi$ | Long Term Transition Matrix | $\Pi = \lim_{{n \to \infty}} P^n$, with all rows equal to $\pi$. Describes the behaviour of the chain after arbitrarily many steps. Not applicable to every Markov Chain |
+| $\Pi$ | Long Term Transition Matrix | $\Pi = \lim_{{n \to \infty}} P^n$, with all rows equal to $\pi$. Describes the behaviour of the chain after arbitrarily many steps. Not applicable to every Markov Chain. |
 | $G=(V, E)$ | Graph | Graph $G$, where $V$ is a set of vertices and $E\subset S \times S$, set of all edges. All graphs in this module are connected and weighted |
 | $V$ | Set of all vertices | Set of all vertices in a graph. In this module, $V=S$ |
 | $E$ | Set of all edges | Set containing all connections in a graph, is a subset of $S\times S$. As all the graphs are connected, for any 2 points $x,y \in V$ there exists a subset of $E$ connecting them |
 | $w(x,y)$ | Weight between vertices $x$ and $y$ | A non-negative real number, describing the weight of an edge. $w(x,y)=0$ if $x,y\notin E$, and $w(x,y)>0$ otherwise. |
 | $W(x)$ | Sum of weights of edges connected to vertex $x$ | Positive(due to connected graph assumption) number, describing the sum of all edges connecting $x$ with the rest of the graph: $W(x)=\sum_{y \in V}w(x,y)<\infty$ $\forall x \in V$|
+| $Y$ | Offspring Distribution | Distribution describing the number of children in the branching process. $X_n$, number of offspring at time $n$, is described as $X_n=\sum_{k=1}^{X_{n-1}} Y_k$, where $Y_i$, $\forall i \in \mathbb{N}$ are independent copies of Y. |
+| $G(s)$ | Probability generating function(of $Y$) | Notion similar to moment generating function. Calculated by $G(s)=\mathbb{E}[s^Y], \quad |s|<1$. |
+| $F_n(s)$ | Probability generating function(of $X_n$) | Notion similar to moment generating function. Calculated by $F_n(s)=\mathbb{E}[s^{X_n}|X_0=1], \quad |s|<1, \quad n \in \mathbb{N} \cup \{0\}$. |
+| $\alpha$ | Extinction Probability | Probability that the branching process ends up with no offspring. Defined as $\alpha=\mathbb{P}(H_0<\infty|X_0=1)$. Can be interpreted as $h_{1,0}$. Smallest solution for equation $G(s)=s$ on the interval $[0,1]$. |
+| $\alpha_n$ | Extinction Probability at time $n$ | Probability that the branching process is extinct at time $n$. Follows a property $\alpha_{n}\geq \alpha_{n+1}$. The sequence $(\alpha_n)_{n\geq 0}$ converges to $\alpha$.  |
 
+
+# Probability generation function properties
+
+Assuming the notation from the table above:
+
+1. $G(s)=\sum_{k=0}^{\infty}s^k \mathbb{P}(Y=k)$ from definition of expectation.
+2. $G(0)=\mathbb{P}(Y=k)$ from 1 by $s=0$.
+3. $G(1)=\mathbb{P}(Y<\infty)=1$ from convergence of expectation.
+4. $G^{(1)}(1)=\mathbb{E}[Y]$ from differentiation of the Power Series.
+5. $F_n(s)=\sum_{k=0}^{\infty}s^k \mathbb{P}(X_n=k | X_0=1)$ from definition of expectation. 
+6. $F_0(s)=s, \quad s \in [0,1]$ following from 5 by subbing in $n=0$.
+7. $F_1(s)=\mathbb{E}[s^{X_1}| X_0=1]=\mathbb{E}[s^{Y}| X_0=1]=G(s),\quad s \in [0,1]$ from definiton of $Y$.
+8. $F_n(0)=\mathbb{P}(X_n=0 | X_0=1), \quad n \in \mathbb{N} \cup \{0\}$ from 5 by subbing in $s=0$.
+9. $F_n^{(1)}(1)=\mathbb{E}[X_n| X_0=1], \quad n \in \mathbb{N} \cup \{0\}$ from differentiation of the Power Series.
+
+10. Proposition 6.1.1, will be added later. 
+11. 
+12. 
